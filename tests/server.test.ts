@@ -1,0 +1,9 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { boundedBody, configuredKey, guard, takeLimit, AppError } from "../lib/server.ts";
+
+test("body limits apply even without a Content-Length header", async () => { const request = new Request("http://localhost/api/analyze", { method: "POST", body: "too much data" }); await assert.rejects(boundedBody(request, 4), (error: unknown) => error instanceof AppError && error.status === 413); });
+test("an oversized declared body is rejected before parsing", async () => { const request = new Request("http://localhost/api/analyze", { method: "POST", headers: { "content-length": "9999" }, body: "x" }); await assert.rejects(boundedBody(request, 4), /too large/); });
+test("foreign browser origins are rejected", () => { const request = new Request("https://demo.example/api/analyze", { method: "POST", headers: { Origin: "https://other.example" } }); assert.throws(() => guard(request), (error: unknown) => error instanceof AppError && error.status === 403); });
+test("a warm-instance rate limit resets after its window", () => { const name = crypto.randomUUID(); takeLimit(name, 2, 1000); takeLimit(name, 2, 1001); assert.throws(() => takeLimit(name, 2, 1002), /too many requests/); assert.doesNotThrow(() => takeLimit(name, 2, 61001)); });
+test("a missing server key fails safely and never uses a public-prefixed key", () => { const original = process.env.GROQ_API_KEY; const originalPublic = process.env.NEXT_PUBLIC_GROQ_API_KEY; try { delete process.env.GROQ_API_KEY; process.env.NEXT_PUBLIC_GROQ_API_KEY = "must-not-be-used"; assert.throws(() => configuredKey(), /not configured/); } finally { if (original === undefined) delete process.env.GROQ_API_KEY; else process.env.GROQ_API_KEY = original; if (originalPublic === undefined) delete process.env.NEXT_PUBLIC_GROQ_API_KEY; else process.env.NEXT_PUBLIC_GROQ_API_KEY = originalPublic; } });
