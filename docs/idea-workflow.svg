@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Brainstomer: from a spoken idea to a useful beginning</title>
+  <desc id="desc">Record in the browser. The server sends audio to Groq-hosted Whisper for transcription, then sends the text to a Groq language model. The result contains a summary, improvements, research suggestions, a first step, a caution, priority estimates, and a prompt to copy into Claude or ChatGPT. Ideas stay in the same browser and the API key stays on the server.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#7947bd" stroke-width="2"/></marker>
+    <style>text{font-family:Arial,sans-serif;fill:#392647}.title{font-size:44px;font-weight:700}.sub{font-size:22px;fill:#786785}.step{font-size:26px;font-weight:700}.body{font-size:21px}.tiny{font-size:18px;fill:#786785}.label{font-size:16px;font-weight:700;letter-spacing:2px;fill:#7947bd}.line{fill:none;stroke:#7947bd;stroke-width:3;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1440" height="1000" rx="28" fill="#fbf8ff"/>
+  <text x="64" y="66" class="label">BRAINSTOMER / HOW IT WORKS</text>
+  <text x="64" y="125" class="title">Say the thought. Find your beginning.</text>
+  <text x="64" y="165" class="sub">A short voice note becomes a small, practical launchpad.</text>
+
+  <rect x="64" y="212" width="380" height="225" rx="22" fill="#ffe9dc" stroke="#efc3aa"/>
+  <text x="90" y="253" class="label">01 / YOU SPEAK</text>
+  <text x="90" y="299" class="step">Record a raw idea</text>
+  <text x="90" y="337" class="body">“What if I could get dinner ideas</text>
+  <text x="90" y="367" class="body">from what is in my fridge?”</text>
+  <text x="90" y="409" class="tiny">Browser microphone → stop to process</text>
+
+  <path d="M455 324H501" class="line"/>
+  <rect x="516" y="212" width="380" height="225" rx="22" fill="#eee4fb" stroke="#d3bdec"/>
+  <text x="542" y="253" class="label">02 / WHISPER HEARS</text>
+  <text x="542" y="299" class="step">Audio → text</text>
+  <text x="542" y="337" class="body">Groq-hosted Whisper</text>
+  <text x="542" y="367" class="body">whisper-large-v3-turbo</text>
+  <text x="542" y="409" class="tiny">Via the server’s /api/transcribe route</text>
+
+  <path d="M907 324H953" class="line"/>
+  <rect x="968" y="212" width="408" height="225" rx="22" fill="#fff4c8" stroke="#e8d47c"/>
+  <text x="994" y="253" class="label">03 / AI DEVELOPS</text>
+  <text x="994" y="299" class="step">Text → starting point</text>
+  <text x="994" y="337" class="body">Groq · openai/gpt-oss-120b</text>
+  <text x="994" y="367" class="body">Short, structured, validated output</text>
+  <text x="994" y="409" class="tiny">Via the server’s /api/analyze route</text>
+
+  <path d="M1172 450V486H720V516" class="line"/>
+  <rect x="64" y="536" width="1312" height="280" rx="22" fill="white" stroke="#dfd2eb"/>
+  <text x="94" y="576" class="label">04 / YOUR IDEA LAUNCHPAD · ILLUSTRATIVE DINNER-HELPER EXAMPLE</text>
+  <text x="94" y="622" class="step">Just enough direction to start.</text>
+  <text x="94" y="664" class="body">Summary · A simple ingredient-to-dinner helper.</text>
+  <text x="94" y="700" class="body">Improve · Add a 20-minute limit and editable staples.</text>
+  <text x="94" y="736" class="body">Research · Recipe APIs, licensing, and allergy limits.</text>
+  <text x="94" y="777" class="tiny">Research topics are suggestions to verify, not live web research.</text>
+  <text x="784" y="664" class="body">First step · Test five real fridge lists.</text>
+  <text x="784" y="700" class="body">Watch out · Ask about allergies.</text>
+  <text x="784" y="736" class="body">Priority · Estimated readiness to begin.</text>
+  <text x="784" y="777" class="tiny">Plus a copyable prompt for Claude or ChatGPT.</text>
+
+  <rect x="64" y="847" width="1312" height="100" rx="20" fill="#eee4fb"/>
+  <text x="94" y="887" class="body" font-weight="700">Copy your starting prompt → open Claude or ChatGPT → begin working.</text>
+  <text x="94" y="922" class="tiny">Key stays on the server · Ideas stay in this browser · Keep the tab open until saved · No cross-device sync</text>
+</svg>

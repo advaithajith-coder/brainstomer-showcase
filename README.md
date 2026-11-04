@@ -4,6 +4,18 @@ A no-login showcase that turns rough voice or text ideas into a practical starti
 
 This is a **standalone public edition**. It does not connect to the original personal app, copy its API key, or access its ideas.
 
+## A look inside
+
+![Brainstomer dashboard with a voice capture button and example ideas](docs/dashboard.png)
+
+Speak a rough thought, stop recording, and get a compact starting point. There is no transcript review step.
+
+![Voice recording flows through Groq-hosted Whisper and the Groq language model into a short idea launchpad](docs/idea-workflow.svg)
+
+The screenshot below shows a **built-in fictional example**, not a live AI result. Each starting point includes a summary, improvements, research suggestions, one first step, a caution, estimated priority, and a prompt you can copy into Claude or ChatGPT.
+
+![Example idea launchpad with improvements, research topics, and a copyable starting prompt](docs/idea-launchpad.png)
+
 ## What visitors can try
 
 - Three clearly labelled example ideas and their short starting points, with no API setup required.
