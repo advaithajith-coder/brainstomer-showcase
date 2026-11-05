@@ -1,10 +1,20 @@
 # Brainstomer
 
-A no-login showcase that turns rough voice or text ideas into a practical starting point for Claude or ChatGPT.
+**The hardest part of a project is often getting from 0 to 1. Brainstomer helps you start at 0.05.**
+
+You're working on a project when a thought pops up. Maybe it solves something you're stuck on. Maybe it's an idea for a completely different project. You could jot it down in your notes app, or you could say it out loud in Brainstomer and get back to what you were doing.
+
+Save the thought as a new idea or add it to one you're already working on. Brainstomer turns your recording into a short starting point you can pick up when you're ready to work.
+
+- **A clear summary** so you can remember what you meant.
+- **Ways to improve it** and a pitfall to watch for.
+- **Things to look up** with search suggestions and a reason each one matters.
+- **One practical first step** and a rough priority estimate to help you decide what to tackle.
+- **A prompt for Claude or ChatGPT** that carries your idea and its context into a fresh chat.
+
+In the **personal version**, record on your phone or any device where you're signed in. When you're ready to sit down at your laptop, open the same workspace and pick up your starting point. In this **public demo**, you can try the recording and AI workflow without signing in. Your ideas stay in the browser where you captured them.
 
 **[Try the live demo](https://brainstomer-showcase-2bkh.vercel.app/)**
-
-This is a **standalone public edition**. It does not connect to the original personal app, copy its API key, or access its ideas.
 
 ## A look inside
 
@@ -14,7 +24,7 @@ Speak a rough thought, stop recording, and get a compact starting point. There i
 
 ![Voice recording flows through Groq-hosted Whisper and the Groq language model into a short idea launchpad](docs/idea-workflow.svg)
 
-The screenshot below shows a **built-in fictional example**, not a live AI result. Each starting point includes a summary, improvements, research suggestions, one first step, a caution, estimated priority, and a prompt you can copy into Claude or ChatGPT.
+Here's what a starting point looks like for the built-in dinner helper example.
 
 ![Example idea launchpad with improvements, research topics, and a copyable starting prompt](docs/idea-launchpad.png)
 
