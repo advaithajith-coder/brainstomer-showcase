@@ -20,9 +20,9 @@ The **personal version** lets you record on your phone and pick up on your lapto
 
 ![Brainstomer dashboard with a voice capture button and example ideas](docs/dashboard.png)
 
-Tap **Record an idea**, speak, then tap stop. Whisper transcribes the audio automatically. Groq uses the text to generate your starting point.
+Tap **Record an idea**, speak, then tap stop. Whisper transcribes the audio automatically. **OpenAI GPT‑OSS 120B** turns the text into your starting point.
 
-![Voice recording flows through Whisper and Groq to produce a starting point](docs/idea-workflow.png)
+![Voice recording flows through Whisper and GPT‑OSS 120B to produce a starting point](docs/idea-workflow.png)
 
 Here’s what the result looks like for the built-in dinner helper example.
 
@@ -41,7 +41,7 @@ Here’s what the result looks like for the built-in dinner helper example.
 1. **Capture.** Record, upload audio, or type your idea.
 2. **Transcribe.** For audio, the server sends the recording to Groq-hosted Whisper through `/api/transcribe`. Typed ideas skip this step.
 3. **Save.** Brainstomer stores the idea in your browser.
-4. **Develop.** `/api/analyze` sends the text to Groq and validates the structured response.
+4. **Develop.** `/api/analyze` sends the text to OpenAI GPT‑OSS 120B (`openai/gpt-oss-120b`), hosted by Groq, and validates the structured response.
 5. **Start.** Open your idea, choose what to research, or copy the prompt into a fresh chat.
 
 Research suggestions are starting points for your own searches. Priority reflects the AI’s estimate of clarity, feasibility, scope, and how easy the idea is to start.
