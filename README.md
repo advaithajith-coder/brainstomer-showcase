@@ -2,6 +2,8 @@
 
 A no-login showcase that turns rough voice or text ideas into a practical starting point for Claude or ChatGPT.
 
+**[Try the live demo](https://brainstomer-showcase-2bkh.vercel.app/)**
+
 This is a **standalone public edition**. It does not connect to the original personal app, copy its API key, or access its ideas.
 
 ## A look inside
